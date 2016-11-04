@@ -2,8 +2,26 @@
 <html ng-app='submurine'>
 <head>
 <script src="./build/bundle.js"></script>
+<style>
+	table > td{
+		height:50px,
+		width:50px;
+	}
+</style>
 </head>
+<button ng-click="setCurrentTab('pick')">Pick</button><button>Guess</button>
 <body ng-controller="mainCtrl">
-{{first}}
+	<div  ng-controller="pickCtrl" ng-show="getCurrentTab('pick')">
+		<table>
+			<tr>
+				<td>sss</td><td></td><td></td>
+			</tr>
+			<tr>
+				<td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<td></td><td></td><td></td>
+			</tr>
+	</div>
 </body>
 </html>

@@ -50,10 +50,22 @@
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
+	var _pickController = __webpack_require__(3);
+	
+	var _pickController2 = _interopRequireDefault(_pickController);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	_angular2.default.module('submurine', []).controller('mainCtrl', ['$scope', function ($scope) {
-		$scope.first = 'submarine';
+	_angular2.default.module('submurine', []).controller('pickCtrl', _pickController2.default).controller('mainCtrl', ['$scope', function ($scope) {
+		$scope.tab = null;
+		$scope.setCurrentTab = function (tabName) {
+			$scope.tab = tabName;
+			console.log($scope.tab);
+		};
+	
+		$scope.getCurrentTab = function (tabName) {
+			return $scope.tab == tabName;
+		};
 	}]);
 
 /***/ },
@@ -31836,6 +31848,20 @@
 	})(window);
 	
 	!window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = pickCtrl;
+	function pickCtrl($scope) {
+		$scope.blabla = "shai";
+	}
 
 /***/ }
 /******/ ]);
