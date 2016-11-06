@@ -3,25 +3,80 @@
 <head>
 <script src="./build/bundle.js"></script>
 <style>
-	table > td{
-		height:50px,
-		width:50px;
+	
+	#container{
+		padding: 0;
+  		margin: 0;
+  		list-style: none;
+  		display: flex;
+  		align-items: center;
+  		justify-content: center;
+  		flex-direction: column;
+	}
+	#btn-container{
+		display: flex;
+		width: 50%;
+	}
+	div > #btn{
+		flex-grow: 1;
+	}
+
+	table{
+		border:1px solid black;
+	}
+	td{
+		height:80px;
+		width:80px;
+		background-color: lightblue;
 	}
 </style>
 </head>
-<button ng-click="setCurrentTab('pick')">Pick</button><button>Guess</button>
 <body ng-controller="mainCtrl">
+<div id="container">
+	<div id="btn-container">
+		<button id="btn" ng-click="setCurrentTab('pick')">Pick</button><button id="btn" ng-click="setCurrentTab('guess')">Guess</button>
+	</div>
 	<div  ng-controller="pickCtrl" ng-show="getCurrentTab('pick')">
+	<h1>Pick</h1>
 		<table>
 			<tr>
-				<td>sss</td><td></td><td></td>
+				<td td-directive id="1" picking-guessing="pickingPlaces(id)" ></td>
+				<td td-directive id="2" picking-guessing="pickingPlaces(id)"></td>
+				<td  td-directive id="3" picking-guessing="pickingPlaces(id)"></td>
 			</tr>
 			<tr>
-				<td></td><td></td><td></td>
+				<td td-directive id="4" picking-guessing="pickingPlaces(id)"></td>
+				<td td-directive id="5" picking-guessing="pickingPlaces(id)"></td>
+				<td td-directive id="6" picking-guessing="pickingPlaces(id)"></td>
 			</tr>
 			<tr>
-				<td></td><td></td><td></td>
+				<td td-directive id="7" picking-guessing="pickingPlaces(id)"></td>
+				<td td-directive id="8" picking-guessing="pickingPlaces(id)"></td>
+				<td td-directive id="9" picking-guessing="pickingPlaces(id)"></td>
 			</tr>
+		</table>
+	</div>
+
+	<div  ng-controller="guessCtrl" ng-show="getCurrentTab('guess')">
+	<h1>Guess</h1>
+		<table>
+			<tr>
+				<td td-directive id="1" picking-guessing="guessPlaces(id)" ></td>
+				<td td-directive id="2" picking-guessing="guessPlaces(id)"></td>
+				<td  td-directive id="3" picking-guessing="guessPlaces(id)"></td>
+			</tr>
+			<tr>
+				<td td-directive id="4" picking-guessing="guessPlaces(id)"></td>
+				<td td-directive id="5" picking-guessing="guessPlaces(id)"></td>
+				<td td-directive id="6" picking-guessing="guessPlaces(id)"></td>
+			</tr>
+			<tr>
+				<td td-directive id="7" picking-guessing="guessPlaces(id)"></td>
+				<td td-directive id="8" picking-guessing="guessPlaces(id)"></td>
+				<td td-directive id="9" picking-guessing="guessPlaces(id)"></td>
+			</tr>
+		</table>
+	</div>
 	</div>
 </body>
 </html>
